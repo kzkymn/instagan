@@ -1,0 +1,29 @@
+{
+    "name": "instagan",
+    "context": "..",
+    "dockerFile": "Dockerfile",
+    "settings": {
+        "http.proxySupport": "off",
+        "jupyter.alwaysTrustNotebooks": true,
+        "python.pythonPath": "/home/vscode/.venv/instagan/bin/python",
+        "python.linting.enabled": true
+    },
+    "appPort": [
+        9000
+    ],
+    "extensions": [
+        "ms-python.vscode-pylance",
+        "ms-python.python",
+        "ms-toolsai.jupyter",
+        "himanoa.python-autopep8"
+    ],
+    "workspaceFolder": "/home/vscode/instagan",
+    "workspaceMount": "type=bind,source=${localWorkspaceFolder},target=/home/vscode/instagan/,type=bind",
+    "runArgs": [
+        "--gpus",
+        "all",
+        "--shm-size",
+        "1024m"
+    ],
+    "remoteUser": "vscode"
+}
